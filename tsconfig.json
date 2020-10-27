@@ -1,34 +1,47 @@
 {
     "compilerOptions": {
-      "module": "esnext",
-      "target": "es6",
-      "allowSyntheticDefaultImports": true,
-      // import的相对起始路径
-      "baseUrl": ".",
-      "sourceMap": true,
-      // 构建输出目录，但因为使用了`webpack`，所以这个配置并没有什么卵用
-      "outDir": "./dist",
-      // 开启`JSX`模式, 
-      // `preserve`的配置让`tsc`不会去处理它，而是使用后续的`babel-loader`进行处理
-      "jsx": "react", 
-      "strict": true,
-      "moduleResolution": "node",
-      // 开启装饰器的使用
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true,
-      // `vs code`所需要的，在开发时找到对应的路径，真实的引用是在`webpack`中配置的`alias`
-      "paths": {
-        
-      }
+        "module": "commonjs",
+        "target": "ES5",
+        "allowSyntheticDefaultImports": true,
+        // import的相对起始路径
+        "baseUrl": ".",
+        "sourceMap": true,
+        // 构建输出目录，但因为使用了`webpack`，所以这个配置并没有什么卵用
+        "outDir": "./dist",
+        // 开启`JSX`模式, 
+        // `preserve`的配置让`tsc`不会去处理它，而是使用后续的`babel-loader`进行处理
+        "jsx": "react",
+        "strict": true,
+        "moduleResolution": "node",
+        // 开启装饰器的使用
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        // `vs code`所需要的，在开发时找到对应的路径，真实的引用是在`webpack`中配置的`alias`
+        "paths": {
+            "@/*": [
+                "src/*"
+            ],
+            "@comp/*": [
+                "src/components/*"
+            ],
+            "@assets/*": [
+                "src/assets/*"
+            ],
+            "@api/*": [
+                "src/api/*"
+            ],
+            "@pages/*": [
+                "src/pages/*"
+            ]
+        }
     },
-    "fileGlob": [
-        "typings/index.d.ts"
-    ],
     "include": [
-        "./src", "typings"
+        "./src",
+        "./typings"
     ],
+    "typings": "./typings/index.d.ts",
     "exclude": [
         "node_modules",
         "build"
     ]
-  }
+}

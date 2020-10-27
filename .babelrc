@@ -16,7 +16,12 @@
         "@babel/preset-typescript"
     ],
     "plugins": [
-        "react-hot-loader/babel",
-        "@babel/plugin-transform-runtime"
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "corejs": 3
+            }
+        ],
+        "react-hot-loader/babel"
     ]
 }

@@ -10,27 +10,31 @@ function cssLoader(env) {
                 loader: env === 'dev' ? 'style-loader' : MiniCssExtractPlugin.loader
             },
             {
-                loader: 'typings-for-css-modules-loader',
-                options: {
-                    modules: true,
-                    namedExport: true,
-                    camelCase: true,
-                }
+                loader: '@teamsupercell/typings-for-css-modules-loader'
             },
             {
                 loader: 'css-loader',
                 options: {
                     sourceMap: true,
                     modules: { 
-                        auto: true 
+                        auto: true,
+                        exportLocalsConvention: 'camelCase', // 将样式文件的 box-header 导入后 改为 boxHeader 
                     },
-                    localsConvention: 'camelCase', // 将样式文件的 box-header 导入后 改为 boxHeader
+                    
                 }
             },
             {
-                loader: 'less-loader',
+                loader: require.resolve('less-loader'),
                 options: {
                     sourceMap: true
+                }
+            },
+            {
+                loader: 'style-resources-loader',
+                options: {
+                    patterns: [
+                        './../src/assets/css/variables.less',
+                    ]
                 }
             }
         ]
