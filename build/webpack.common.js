@@ -84,7 +84,8 @@ const config = {
             '@': resolve('./../src/'),
             '@comp': resolve('./../src/component/'),
             '@asset': resolve('./../src/assets'),
-            '@utils': resolve('./../src/utils')
+            '@utils': resolve('./../src/utils'),
+            '@views': resolve('./../src/views')
         },
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
     },

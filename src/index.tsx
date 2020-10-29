@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Index from './views/index';
+import App from './views/app/index';
 import '@asset/css/global.less'
-
+// import 'antd/dist/antd.min.css'
 ReactDom.render(
-    <Index />,
+    <App />,
     document.getElementById('root')
 )
