@@ -13,8 +13,7 @@ const config = {
     },
     output: {
         filename: "js/[name].[fullhash].js",
-        path: resolve('./../dist'),
-        publicPath: ''
+        path: resolve('../dist')
     },
     target: ['web', 'es5'],
     optimization: { // 代码分隔

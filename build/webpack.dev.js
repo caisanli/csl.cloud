@@ -14,10 +14,15 @@ const config = {
             cssLoader('dev')
         ]
     },
+    resolve: {
+        alias: {
+            'react-dom': '@hot-loader/react-dom'
+        },
+    },
     devServer: {
         contentBase: path.join(__dirname, './../dist'),
-        hot: true,
         open: true,
+        hot: true,
         proxy: {
             '/api': {
                 target: "http://localhost:3000",
@@ -25,7 +30,7 @@ const config = {
             }
         }
     },
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ]

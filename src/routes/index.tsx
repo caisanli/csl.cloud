@@ -12,7 +12,14 @@ const routes:RouteConfig[] = [{
     // [propName: string]: any;
     path: '/',
     exact: true,
-    component: require('@views/main/index.tsx').default
+    component: require('@views/main').default
+}, {
+    path: '/login',
+    exact: true,
+    component: require('@views/login').default
+}, {
+    path: '*',
+    component: require('@views/404').default
 }];
 
 export default routes;

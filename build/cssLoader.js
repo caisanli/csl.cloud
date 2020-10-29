@@ -19,14 +19,16 @@ function cssLoader(env) {
                     modules: { 
                         auto: true,
                         exportLocalsConvention: 'camelCase', // 将样式文件的 box-header 导入后 改为 boxHeader 
-                    },
-                    
+                    }
                 }
             },
             {
                 loader: require.resolve('less-loader'),
                 options: {
-                    sourceMap: true
+                    sourceMap: true,
+                    lessOptions: {
+                        javascriptEnabled: true,
+                    }
                 }
             },
             {
